@@ -6,6 +6,7 @@ import { WidgetContext } from '../../context/WidgetContext';
 const MultiStep = () => {
   const [step, setStep] = useState(1);
   const { dispatch } = useContext(WidgetContext);
+  let history = useHistory();
 
   const [formValues, setFormValues] = useState({
     language: 'Javascript',
@@ -26,17 +27,22 @@ const MultiStep = () => {
     });
   };
 
-  let history = useHistory();
+  const validation = () => {
+    if (formValues.name === '') {
+      alert('Please insert name');
+    } else {
+      history.push('/');
+    }
+  };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
     dispatch({ type: 'ADD_WIDGET', widget: { ...formValues } });
     setFormValues({ language: 'Javascript', name: '' });
-    history.push('/');
+    validation();
   };
 
   return (
-    <div className="App">
+    <div>
       <StepDisplay
         currentStep={step}
         handleFormInput={handleFormInput}

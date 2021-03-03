@@ -1,4 +1,4 @@
-import { Redirect, Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Main from './pages/main/Main';
 import Create from './pages/create/Create';
 import Navbar from './components/navbar/Navbar';

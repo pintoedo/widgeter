@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { WidgetContext } from '../../context/WidgetContext';
+import React from 'react';
 import styled from 'styled-components';
 import DeleteModal from '../../components/modal/Modal';
 

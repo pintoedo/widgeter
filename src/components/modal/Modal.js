@@ -4,8 +4,7 @@ import { WidgetContext } from '../../context/WidgetContext';
 
 const DeleteModal = ({ data }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  // const appContext = useContext(WidgetContext);
-  // let { widgets } = appContext;
+
   const { dispatch } = useContext(WidgetContext);
 
   function openModal() {
