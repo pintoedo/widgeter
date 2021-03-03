@@ -18,10 +18,10 @@ const StepOne = (formikProps) => {
   const { errors, touched } = formikProps;
   return (
     <div>
-      <Field name="language" label="Language" as="select">
-        {languages.map((item, i) => (
+      <Field name="language" label="Language">
+        {/* {languages.map((item, i) => (
           <option key={i}>{item}</option>
-        ))}
+        ))} */}
       </Field>
     </div>
   );
