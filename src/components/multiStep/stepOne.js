@@ -1,28 +1,21 @@
 import React from 'react';
-import { Field } from 'formik';
+import { data } from '../../data';
 
-const languages = [
-  'Javacript',
-  'Python',
-  'PHP',
-  'Java',
-  'Solidity',
-  'Kotlin',
-  'C++',
-  'Swift',
-  'Go',
-  'Rust',
-];
-
-const StepOne = (formikProps) => {
-  const { errors, touched } = formikProps;
+const StepOne = ({ handleFormInput, formValues }) => {
   return (
     <div>
-      <Field name="language" label="Language">
-        {/* {languages.map((item, i) => (
-          <option key={i}>{item}</option>
-        ))} */}
-      </Field>
+      <label>LANGUAGE</label>
+      <select
+        name="language"
+        label="Language"
+        value={formValues.language}
+        onChange={handleFormInput}
+        required
+      >
+        {data.map((item, i) => (
+          <option key={i}>{item.language} </option>
+        ))}
+      </select>
     </div>
   );
 };

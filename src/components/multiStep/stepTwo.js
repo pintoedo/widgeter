@@ -1,18 +1,18 @@
 import React from 'react';
-import { Field } from 'formik';
 import { Redirect, Route, Link } from 'react-router-dom';
 
-const StepTwo = (formikProps) => {
-  const { errors, touched } = formikProps;
-  console.log(formikProps.values);
-
+const StepTwo = ({ handleFormInput, formValues }) => {
   return (
-    <>
-      <Field name="name" label="Name" />
-      {/* <Route exact path="/">
-        <Redirect to="/" />
-      </Route> */}
-    </>
+    <div>
+      <label>Name</label>
+      <input
+        label="name"
+        name="name"
+        value={formValues.name}
+        onChange={handleFormInput}
+        required
+      ></input>
+    </div>
   );
 };
 
