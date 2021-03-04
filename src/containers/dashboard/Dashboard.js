@@ -8,11 +8,9 @@ const Dashboard = () => {
   let { widgets } = appContext;
   return widgets.length ? (
     <Container>
-      <ul>
-        {widgets.map((data, i) => {
-          return <Widget data={data} key={data.id} />;
-        })}
-      </ul>
+      {widgets.map((data, i) => {
+        return <Widget data={data} key={data.id} />;
+      })}
     </Container>
   ) : (
     <div className="empty">
@@ -23,12 +21,11 @@ const Dashboard = () => {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  background: white;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 
 export default Dashboard;

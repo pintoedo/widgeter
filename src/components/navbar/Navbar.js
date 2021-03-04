@@ -1,22 +1,58 @@
 import React from 'react';
-import { Redirect, Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Navbar = () => {
   return (
-    <div>
-      <h2>Widgeter</h2>
-      <nav className="navbar navbar">
-        <ul className="nav navbar-nav">
-          <li>
-            <Link to="/">Dashboard</Link>
-          </li>
-          <button>
-            <Link to="/add">Create Widget +</Link>
-          </button>
-        </ul>
-      </nav>{' '}
-    </div>
+    <NavContainer>
+      <Title to="/" as={Link}>
+        WIDGETR
+      </Title>
+      <NavButtons>
+        <StyledLink to="/add" as={Link}>
+          Add widget +
+        </StyledLink>
+      </NavButtons>
+    </NavContainer>
   );
 };
+
+const NavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 0 0 0 20px;
+`;
+
+const Title = styled.a`
+  flex-direction: row;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 22px;
+  font-weight: 900;
+  text-decoration: none;
+  color: black;
+`;
+
+const NavButtons = styled.div`
+  padding: 14px 16px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  flex-direction: row;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  font-weight: 800;
+  color: black;
+  &:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  & > icon {
+    display: none;
+  }
+`;
 
 export default Navbar;

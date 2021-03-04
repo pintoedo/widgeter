@@ -1,11 +1,21 @@
 import React from 'react';
-import { data } from '../../data';
+import styled from 'styled-components';
+
+const data = [
+  'Javacript',
+  'Python',
+  'PHP',
+  'Java',
+  'Solidity',
+  'Kotlin',
+  'Swift',
+];
 
 const StepOne = ({ handleFormInput, formValues }) => {
   return (
     <div>
-      <label>LANGUAGE</label>
-      <select
+      <Title>Choose Language</Title>
+      <Select
         name="language"
         label="Language"
         value={formValues.language}
@@ -13,11 +23,26 @@ const StepOne = ({ handleFormInput, formValues }) => {
         required
       >
         {data.map((item, i) => (
-          <option key={i}>{item.language} </option>
+          <option key={i}>{item}</option>
         ))}
-      </select>
+      </Select>
     </div>
   );
 };
+
+const Title = styled.h3`
+  font-size: 16px;
+  padding-top: 10px;
+  font-weight: 700;
+`;
+
+const Select = styled.select`
+  margin: 5px;
+  padding: 5px;
+  min-width: 300px;
+  border-radius: 3px;
+  border: solid 1px #7e7e7e;
+  font-size: 18px;
+`;
 
 export default StepOne;

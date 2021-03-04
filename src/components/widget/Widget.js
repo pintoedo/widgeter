@@ -1,84 +1,81 @@
 import React from 'react';
 import styled from 'styled-components';
 import DeleteModal from '../../components/modal/Modal';
+import { source } from '../../data';
 
 const Widget = ({ data }) => {
+  console.log(source[data.language]);
   return (
     <Card>
-      <Image src="https://picsum.photos/480/480" alt="" />
+      <Image
+        src={source[data.language]}
+        // src="https://qph.fs.quoracdn.net/main-qimg-c37440d6672ffae0a5c89f92f2e19e3e"
+        alt=""
+      />
       <CardInfo>
         <CardTitle>
-          <Name>{data.language}</Name>
-          <Language>{data.name}</Language>
+          <Name>{data.name}</Name>
+          <Language>{data.language}</Language>
         </CardTitle>
+        <Delete>
+          <DeleteModal data={data} />
+        </Delete>
       </CardInfo>
-
-      <DeleteModal data={data} />
     </Card>
   );
 };
 
 //STYLING
 const Card = styled.div`
-  position: relative;
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  width: 200px;
-  margin-right: 1rem;
-  padding: 1rem;
-  z-index: 0;
-  cursor: pointer;
-  &:before {
-    content: ' ';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 88%;
-    height: 88%;
-    background: #d1d1d1;
-    border-radius: 15px;
-    z-index: -1;
-    transition: all 150ms ease;
-  }
-  &:hover:before {
-    width: 100%;
-    height: 100%;
-    transition: all 300ms ease;
-  }
+  border-radius: 15px;
+  margin: 30px;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+  justify-content: flex-start;
+  height: 125px;
+  width: 280px;
 `;
 
 const CardInfo = styled.div`
-  margin: 0 8px 0 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
+  margin: 0 8px 0 8px;
+  width: 100%;
 `;
 
 const CardTitle = styled.div`
   font-family: 'Avenir Next', 'Lato', sans-serif;
-  flex: 1;
   padding: 10px;
   font-size: 18px;
   font-weight: 500;
 `;
 
+const Delete = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-weight: 400;
+  color: rgb(119, 119, 119);
+  font-size: 14px;
+  margin: 0 0 10px 10px;
+`;
+
 const Image = styled.img`
-  height: 150px;
-  width: 100%;
+  width: 90px;
+  border-radius: 15px 0 0 15px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 1rem;
 `;
 
 const Name = styled.h1`
-  font-size: 1.5rem;
+  font-size: 22px;
   font-weight: 600;
   margin: 0;
 `;
 
 const Language = styled.p`
-  font-size: 0.875rem;
+  font-size: 17px;
   margin: 0;
 `;
 

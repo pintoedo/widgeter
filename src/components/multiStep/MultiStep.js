@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import StepDisplay from './StepDisplay';
 import { WidgetContext } from '../../context/WidgetContext';
+import styled from 'styled-components';
 
 const MultiStep = () => {
   const [step, setStep] = useState(1);
@@ -35,10 +36,11 @@ const MultiStep = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     dispatch({ type: 'ADD_WIDGET', widget: { ...formValues } });
     setFormValues({ language: 'Javascript', name: '' });
     validation();
+    console.log(formValues);
   };
 
   return (
@@ -48,16 +50,26 @@ const MultiStep = () => {
         handleFormInput={handleFormInput}
         formValues={formValues}
       />
-      <br />
       {step !== 1 ? (
         <>
-          <button onClick={decrementStep}>Back</button>
-          <button onClick={(e) => handleSubmit(formValues)}>Submit</button>
+          <Button onClick={decrementStep}>Back</Button>
+          <Button onClick={(e) => handleSubmit(formValues)}>Submit</Button>
         </>
       ) : null}
-      {step !== 2 ? <button onClick={incrementStep}>Next</button> : null}
+      {step !== 2 ? <Button onClick={incrementStep}>Next</Button> : null}
     </div>
   );
 };
+
+const Button = styled.button`
+  border: #007dba solid 2px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 16px;
+  background: #007dba;
+  color: #fff;
+  min-width: 100px;
+  border-radius: 3px;
+`;
 
 export default MultiStep;
