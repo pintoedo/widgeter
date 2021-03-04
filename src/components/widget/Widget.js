@@ -3,18 +3,23 @@ import styled from 'styled-components';
 import DeleteModal from '../../components/modal/Modal';
 import { source } from '../../data';
 
+const shortString = (data) => {
+  const MAX_LENGTH = 24;
+  return data.name.substring(0, MAX_LENGTH) + '...';
+};
+
 const Widget = ({ data }) => {
   console.log(source[data.language]);
   return (
     <Card>
-      <Image
-        src={source[data.language]}
-        // src="https://qph.fs.quoracdn.net/main-qimg-c37440d6672ffae0a5c89f92f2e19e3e"
-        alt=""
-      />
+      <Image src={source[data.language]} alt="" />
       <CardInfo>
         <CardTitle>
-          <Name>{data.name}</Name>
+          {data.name.length > 24 ? (
+            <Name>{shortString(data)}</Name>
+          ) : (
+            <Name>{data.name}</Name>
+          )}
           <Language>{data.language}</Language>
         </CardTitle>
         <Delete>
@@ -25,7 +30,6 @@ const Widget = ({ data }) => {
   );
 };
 
-//STYLING
 const Card = styled.div`
   background-color: white;
   display: flex;
@@ -50,12 +54,15 @@ const CardTitle = styled.div`
   padding: 10px;
   font-size: 18px;
   font-weight: 500;
+  overflow-wrap: break-word;
+  width: 155px;
 `;
 
 const Delete = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  position: relative;
   font-weight: 400;
   color: rgb(119, 119, 119);
   font-size: 14px;

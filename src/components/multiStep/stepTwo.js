@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StepTwo = ({ handleFormInput, formValues }) => {
   return (
     <div>
-      <Title>Choose name</Title>
+      <Title>Step 2 - Enter name</Title>
       <Input
         label="name"
         name="name"

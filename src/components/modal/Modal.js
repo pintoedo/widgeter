@@ -48,7 +48,7 @@ const ModalStyled = styled(Modal)`
   margin: 20% auto;
   padding: 10px;
   height: 120px;
-  width: 200px;
+  width: 250px;
   background-color: white;
 `;
 
@@ -59,14 +59,12 @@ const ButtonDiv = styled.div`
 `;
 
 const Button = styled.button`
-  border: none;
-  border-radius: 2px;
-  padding: 2px 10px;
-  margin: 10px;
+  border: #007dba solid 2px;
+  padding: 5px;
+  margin: 5px;
   font-size: 16px;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: white;
-  background-color: #2196f3;
-  outline: none;
+  background-color: #007dba;
+  color: #fff;
+  min-width: 100px;
+  border-radius: 3px;
 `;

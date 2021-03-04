@@ -34,10 +34,6 @@ const Title = styled.a`
   color: black;
 `;
 
-const NavButtons = styled.div`
-  padding: 14px 16px;
-`;
-
 const StyledLink = styled(Link)`
   text-decoration: none;
   flex-direction: row;
@@ -55,4 +51,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const NavButtons = styled.div`
+  padding: 14px 16px;
+`;
 export default Navbar;

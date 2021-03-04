@@ -6,7 +6,7 @@ export const widgetReducer = (state, action) => {
         ...state,
         {
           language: action.widget.language,
-          name: action.widget.name,
+          name: action.widget.name.trim(),
           id: uuidv4(),
         },
       ];

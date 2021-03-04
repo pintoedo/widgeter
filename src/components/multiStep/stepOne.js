@@ -14,7 +14,7 @@ const data = [
 const StepOne = ({ handleFormInput, formValues }) => {
   return (
     <div>
-      <Title>Choose Language</Title>
+      <Title>Step 1 - Select Language</Title>
       <Select
         name="language"
         label="Language"

@@ -28,19 +28,14 @@ const MultiStep = () => {
     });
   };
 
-  const validation = () => {
-    if (formValues.name === '') {
-      alert('Please insert name');
-    } else {
-      history.push('/');
-    }
-  };
-
   const handleSubmit = () => {
-    dispatch({ type: 'ADD_WIDGET', widget: { ...formValues } });
-    setFormValues({ language: 'Javascript', name: '' });
-    validation();
-    console.log(formValues);
+    if (formValues.name !== '') {
+      dispatch({ type: 'ADD_WIDGET', widget: { ...formValues } });
+      setFormValues({ language: 'Javascript', name: '' });
+      history.push('/');
+    } else {
+      alert('Please enter a valid name');
+    }
   };
 
   return (
@@ -66,7 +61,7 @@ const Button = styled.button`
   padding: 5px;
   margin: 5px;
   font-size: 16px;
-  background: #007dba;
+  background-color: #007dba;
   color: #fff;
   min-width: 100px;
   border-radius: 3px;
