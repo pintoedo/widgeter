@@ -28,8 +28,10 @@ const MultiStep = () => {
     });
   };
 
+  const validation = /^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/;
+
   const handleSubmit = () => {
-    if (formValues.name !== '') {
+    if (validation.test(formValues.name)) {
       dispatch({ type: 'ADD_WIDGET', widget: { ...formValues } });
       setFormValues({ language: 'Javascript', name: '' });
       history.push('/');
@@ -39,7 +41,7 @@ const MultiStep = () => {
   };
 
   return (
-    <div>
+    <div title="multistep-test">
       <StepDisplay
         currentStep={step}
         handleFormInput={handleFormInput}

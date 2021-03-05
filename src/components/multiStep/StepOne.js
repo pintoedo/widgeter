@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const data = [
-  'Javacript',
+const languages = [
+  'Javascript',
   'Python',
   'PHP',
   'Java',
@@ -22,7 +22,7 @@ const StepOne = ({ handleFormInput, formValues }) => {
         onChange={handleFormInput}
         required
       >
-        {data.map((item, i) => (
+        {languages.map((item, i) => (
           <option key={i}>{item}</option>
         ))}
       </Select>

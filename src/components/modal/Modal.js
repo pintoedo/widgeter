@@ -12,7 +12,6 @@ const DeleteModal = ({ data }) => {
 
   function openModal() {
     setIsOpen(true);
-    console.log(data);
   }
 
   function closeModal() {
@@ -20,7 +19,7 @@ const DeleteModal = ({ data }) => {
   }
 
   return (
-    <div>
+    <div title="modal-test">
       <FontAwesomeIcon onClick={openModal} icon={faTrash} />
       <ModalStyled
         isOpen={modalIsOpen}

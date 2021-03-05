@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DeleteModal from '../../components/modal/Modal';
-import { source } from '../../data';
+import { source } from '../../source';
 
 const shortString = (data) => {
   const MAX_LENGTH = 24;
@@ -10,7 +10,7 @@ const shortString = (data) => {
 
 const Widget = ({ data }) => {
   return (
-    <Card>
+    <Card title="widget-test">
       <Image src={source[data.language]} alt="" />
       <CardInfo>
         <CardTitle>

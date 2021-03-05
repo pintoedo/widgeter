@@ -7,7 +7,7 @@ const Dashboard = () => {
   const appContext = useContext(WidgetContext);
   let { widgets } = appContext;
   return widgets.length ? (
-    <Container>
+    <Container title="dashboard-test">
       {widgets.map((data, i) => {
         return <Widget data={data} key={data.id} />;
       })}

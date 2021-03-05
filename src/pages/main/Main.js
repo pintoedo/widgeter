@@ -3,7 +3,7 @@ import Dashboard from '../../containers/dashboard/Dashboard';
 
 const Main = () => {
   return (
-    <div>
+    <div title="main-test">
       <Dashboard />
     </div>
   );
