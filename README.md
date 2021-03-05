@@ -12,7 +12,7 @@
 
 ## 1. About the app
 
-Widgetr is a simple web application where users can create new widgets that contain a name and a language.
+Widgetr is a simple web application where users can create new widgets that contain a name and a language. Test here https://widgeter-test.vercel.app/
 
 ## 2. Libraries & Frameworks
 
