@@ -48,7 +48,7 @@ const MultiStep = () => {
       {step !== 1 ? (
         <>
           <Button onClick={decrementStep}>Back</Button>
-          <Button onClick={(e) => handleSubmit(formValues)}>Submit</Button>
+          <Button onClick={(e) => handleSubmit(formValues)}>Create</Button>
         </>
       ) : null}
       {step !== 2 ? <Button onClick={incrementStep}>Next</Button> : null}
@@ -57,14 +57,15 @@ const MultiStep = () => {
 };
 
 const Button = styled.button`
-  border: #007dba solid 2px;
+  border: none;
   padding: 5px;
   margin: 5px;
   font-size: 16px;
-  background-color: #007dba;
+  font-weight: 600;
+  background-color: black;
   color: #fff;
   min-width: 100px;
-  border-radius: 3px;
+  border-radius: 8px;
 `;
 
 export default MultiStep;

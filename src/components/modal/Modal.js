@@ -59,12 +59,12 @@ const ButtonDiv = styled.div`
 `;
 
 const Button = styled.button`
-  border: #007dba solid 2px;
+  border: none;
   padding: 5px;
   margin: 5px;
   font-size: 16px;
-  background-color: #007dba;
+  background-color: black;
   color: #fff;
   min-width: 100px;
-  border-radius: 3px;
+  border-radius: 8px;
 `;

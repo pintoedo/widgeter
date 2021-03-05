@@ -9,7 +9,6 @@ const shortString = (data) => {
 };
 
 const Widget = ({ data }) => {
-  console.log(source[data.language]);
   return (
     <Card>
       <Image src={source[data.language]} alt="" />
