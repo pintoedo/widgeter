@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import StepDisplay from './StepDisplay';
 import { WidgetContext } from '../../context/WidgetContext';
-import styled from 'styled-components';
+import Button from '../button/Button';
 
 const MultiStep = () => {
   const [step, setStep] = useState(1);
@@ -49,25 +49,13 @@ const MultiStep = () => {
       />
       {step !== 1 ? (
         <>
-          <Button onClick={decrementStep}>Back</Button>
-          <Button onClick={(e) => handleSubmit(formValues)}>Create</Button>
+          <Button action={decrementStep} content="Back" />
+          <Button action={(e) => handleSubmit(formValues)} content="Create" />
         </>
       ) : null}
-      {step !== 2 ? <Button onClick={incrementStep}>Next</Button> : null}
+      {step !== 2 ? <Button action={incrementStep} content="Next" /> : null}
     </div>
   );
 };
-
-const Button = styled.button`
-  border: none;
-  padding: 5px;
-  margin: 5px;
-  font-size: 16px;
-  font-weight: 600;
-  background-color: black;
-  color: #fff;
-  min-width: 100px;
-  border-radius: 8px;
-`;
 
 export default MultiStep;

@@ -1,21 +1,17 @@
 import React from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Navbar = () => {
   return (
     <NavContainer title="navbar-test">
-      <BrowserRouter>
-        <Title to="/" as={Link}>
-          WIDGETR
-        </Title>
-      </BrowserRouter>
+      <Title to="/" as={Link}>
+        WIDGETR
+      </Title>
       <NavButtons>
-        <BrowserRouter>
-          <StyledLink to="/add" as={Link}>
-            Add widget +
-          </StyledLink>
-        </BrowserRouter>
+        <StyledLink to="/add" as={Link}>
+          Add widget +
+        </StyledLink>
       </NavButtons>
     </NavContainer>
   );

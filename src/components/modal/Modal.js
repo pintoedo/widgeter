@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { WidgetContext } from '../../context/WidgetContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import Button from '../button/Button';
 import styled from 'styled-components';
 
 const DeleteModal = ({ data }) => {
@@ -30,11 +31,11 @@ const DeleteModal = ({ data }) => {
         <p>Sure you want to delete this widget?</p>
         <ButtonDiv>
           <Button
-            onClick={() => dispatch({ type: 'REMOVE_WIDGET', id: data.id })}
-          >
-            YES
-          </Button>
-          <Button onClick={closeModal}>NO</Button>
+            action={() => dispatch({ type: 'REMOVE_WIDGET', id: data.id })}
+            content="Yes"
+          />
+
+          <Button action={closeModal} content="No" />
         </ButtonDiv>
       </ModalStyled>
     </div>
@@ -55,15 +56,4 @@ const ButtonDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const Button = styled.button`
-  border: none;
-  padding: 5px;
-  margin: 5px;
-  font-size: 16px;
-  background-color: black;
-  color: #fff;
-  min-width: 100px;
-  border-radius: 8px;
 `;
